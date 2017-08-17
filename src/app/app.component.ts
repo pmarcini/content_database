@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
+import { BodyComponent } from './body.component';
+import { HeaderComponent } from './header.component';
+import { LeftNavComponent } from './left-nav.component';
+import { InsertDataComponent } from './insert-data.component';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './html/app.component.html',
+  styleUrls: ['./css/app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  constructor(public myService: DataService){}
+
 }
