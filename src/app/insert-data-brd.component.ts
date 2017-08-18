@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import './js/pasteimage.js'
+
 
 @Component({
   selector: 'insert-data-brd-comp',
@@ -7,5 +9,6 @@ import { Component } from '@angular/core';
 })
 
 export class InsertDataBrdComponent {
+
 
 }
