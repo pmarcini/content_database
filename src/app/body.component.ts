@@ -12,8 +12,8 @@ import { OnInit } from '@angular/core';
 export class BodyComponent{
     users: Array<any>;
 
-  constructor(private _dataService: DataService){
-    this._dataService.getUsers()
+  constructor(private dataService: DataService){
+    this.dataService.getUsers()
       .subscribe(res => this.users = res);
   }
 
