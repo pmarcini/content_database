@@ -13,10 +13,12 @@ import { InsertDataComponent } from './insert-data.component';
 import { AppRoutingModule} from './app-routing.module';
 import { InsertDataPkgComponent } from './insert-data-pkg.component';
 import { InsertDataBrdComponent } from './insert-data-brd.component';
+import { InsertDataMBVRComponent } from './insert-data-mbvr.component';
+import { InsertDataFIVRComponent } from './insert-data-fivr.component';
 
 @NgModule({
   declarations: [AppComponent, BodyComponent, HeaderComponent, LeftNavComponent, InsertDataComponent, 
-                 InsertDataPkgComponent, InsertDataBrdComponent],
+                 InsertDataPkgComponent, InsertDataBrdComponent, InsertDataMBVRComponent, InsertDataFIVRComponent],
 
   imports: [BrowserModule,HttpModule,AppRoutingModule,FormsModule,ReactiveFormsModule],
 

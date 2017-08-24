@@ -5,6 +5,7 @@ import { LeftNavComponent } from './left-nav.component';
 import { InsertDataComponent } from './insert-data.component';
 import { InsertDataPkgComponent } from './insert-data-pkg.component';
 import { InsertDataBrdComponent } from './insert-data-brd.component';
+import { InsertDataMBVRComponent } from './insert-data-mbvr.component';
 import { DataService } from './data.service';
 
 @Component({

@@ -1,4 +1,3 @@
-<div ng-init="load()"></div>
 
 <ul class="nav nav-tabs">
   <li class="nav-item">
@@ -17,13 +16,27 @@
 
 <p></p>
 
+<div class="container-fluid">
+    <h6>Insert MBVR Data Component </h6>
 
-<h6>Insert BRD Data Component </h6>
+  <form [formGroup]="rForm" (ngSubmit)= "insertMBVRAnalysis(rForm.value)">
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Product Name</label>
+    <select class="form-control" formControlName="productName">
+      <option *ngFor = "let product of products" [value] = "product.productName"> {{product.productName}} </option>
+    </select>
+  </div>
 
 
-<canvas style="border:1px solid grey;" id="my_canvas" width="500" height="300"></canvas>
 
-<div></div>
+  <button input type = "submit" class="btn btn-default" value="Submit Button" > Add MBVR Analysis </button>
+  </form>
+
+<p></p>
 
 <a routerLink="/bodyComponent" routerLinkActive = "active" class="btn btn-primary" role="button">Exit</a>
+
+</div>
+
 

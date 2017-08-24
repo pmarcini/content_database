@@ -40,10 +40,10 @@ export class InsertDataPkgComponent {
           'stackupType': [null], 
           'numberOfStackupLayers': [null], 
           'socketType': [null], 
-          'containsFIVR': [null], 
-          'containsMCDRAM': [null], 
-          'containsFabric': [null], 
-          'containsFPGA': [null], 
+          'containsFIVR': false,
+          'containsMCDRAM': false, 
+          'containsFabric': false, 
+          'containsFPGA': false, 
           'memoryType': [null], // DDR3 or DDR4
           'pcieGen': [null], 
           'coreCount': [null]
