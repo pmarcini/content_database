@@ -15,6 +15,7 @@ export class BodyComponent{
   constructor(private dataService: DataService){
     this.dataService.getUsers()
       .subscribe(res => this.users = res);
+
   }
 
 }

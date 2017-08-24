@@ -9,6 +9,7 @@ export class DataService {
 
   result:any;
   constructor(private http: Http) { }
+  
 
   getUsers(){
     //return this.http.get("/api/users")
@@ -23,8 +24,8 @@ export class DataService {
   }
 
 
-    insertProduct(name, sku){
-        let body = JSON.stringify({name, sku});
+    insertProduct(post){
+        let body = JSON.stringify(post);
         let url: string = "/api/products";
         let headers = new Headers({ 'Content-Type': 'application/json'});
         let options = new RequestOptions({headers:headers});

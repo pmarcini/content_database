@@ -13,23 +13,54 @@ export class InsertDataPkgComponent {
 
     rForm: FormGroup;
     post: any;
-    productName: string;
-    productSKU: string;  
+
+
+    productName: String;
+    productCodeName: String; 
+    productSKU: String;
+    productType: "Package"
+    stackupType: String; 
+    numberOfStackupLayers: any; 
+    socketType: String; 
+    containsFIVR: Boolean; 
+    containsMCDRAM: Boolean; 
+    containsFabric: Boolean; 
+    containsFPGA: Boolean; 
+    memoryType: String; // DDR3 or DDR4
+    pcieGen: String; 
+    coreCount: any; 
 
     constructor(public myService: DataService, private fb: FormBuilder){
 
           this.rForm = fb.group({
           'productName': [null],
-          'productSKU' : [null]
+          'productCodeName': [null],
+          'productSKU' : [null],
+          'productType': "Package", //board or package 
+          'stackupType': [null], 
+          'numberOfStackupLayers': [null], 
+          'socketType': [null], 
+          'containsFIVR': [null], 
+          'containsMCDRAM': [null], 
+          'containsFabric': [null], 
+          'containsFPGA': [null], 
+          'memoryType': [null], // DDR3 or DDR4
+          'pcieGen': [null], 
+          'coreCount': [null]
+          
      });
 
     }
 
     insertProduct(post){
-      console.log(post);
-      this.productName = post.productName;
-      this.productSKU = post.productSKU;
-      this.myService.insertProduct(this.productName, this.productSKU).subscribe()
+
+
+      //this.productName = post.productName;
+      //this.productCodeName = post.productCodeName;
+      //this.productSKU = post.productSKU;
+      //this.stackupType = post.stackupType;
+      console.log("data-component: " + post); 
+      this.myService.insertProduct(post).subscribe()
 
     }
 

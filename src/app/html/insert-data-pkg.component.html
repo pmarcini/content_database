@@ -30,6 +30,13 @@
       </div>
     </div>
 
+    <div class="form-group row">
+      <label for="productCodeName" class="col-sm-2 col-form-label">Product Codename</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" formControlName="productCodeName" placeholder="">
+      </div>
+    </div> 
+
      <div class="form-group row">
       <label for="productSKU" class="col-sm-2 col-form-label">Product SKU</label>
       <div class="col-sm-8">
@@ -37,31 +44,33 @@
       </div>
     </div> 
 
+    
+
     <fieldset class="form-group">
       <div class="row">
         <legend class="col-form-legend col-sm-2">Stackup Type</legend>
         <div class="col-sm-10">
           <div class="form-check">
             <label class="form-check-label">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+              <input class="form-check-input" type="radio" name="stackupType" formControlName="stackupType" value="SVLC">
               SVLC
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+              <input class="form-check-input" type="radio" name="stackupType" formControlName="stackupType" value="x-2-x">
               x-2-x
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+              <input class="form-check-input" type="radio" name="stackupType" formControlName="stackupType" value="x-4-x">
               x-4-x
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+              <input class="form-check-input" type="radio" name="stackupType" formControlName="stackupType" value="PoINT Interposer">
               POINT Interposer
             </label>
           </div>
@@ -72,14 +81,14 @@
      <div class="form-group row">
       <label for="numberOfStackupLayers" class="col-sm-2 col-form-label">Number of Stackup Layers</label>
       <div class="col-sm-8">
-        <input type="text" class="form-control" id="numberOfStackupLayers" placeholder="">
+        <input type="text" class="form-control" formControlName="numberOfStackupLayers" placeholder="">
       </div>
     </div>
 
      <div class="form-group row">
       <label for="socketType" class="col-sm-2 col-form-label">Socket Type</label>
       <div class="col-sm-8">
-        <input type="text" class="form-control" id="socketType" placeholder="">
+        <input type="text" class="form-control" formControlName="socketType" placeholder="">
       </div>
     </div>    
     
@@ -88,10 +97,10 @@
       <div class="col-sm-10">
         <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="checkbox"> FIVR
-            <div><input class="form-check-input" type="checkbox"> MCDRAM </div>
-            <div><input class="form-check-input" type="checkbox"> Fabric </div>
-            <div><input class="form-check-input" type="checkbox"> FPGA </div>
+            <input class="form-check-input" formControlName = "containsFIVR" type="checkbox"> FIVR
+            <div><input class="form-check-input" formControlName = "containsMCDRAM" type="checkbox"> MCDRAM </div>
+            <div><input class="form-check-input" formControlName = "containsFabric" type="checkbox"> Fabric </div>
+            <div><input class="form-check-input" formControlName = "containsFPGA" type="checkbox"> FPGA </div>
           </label>
         </div>
       </div>
