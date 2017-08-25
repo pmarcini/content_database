@@ -17,3 +17,19 @@
 <p></p>
 
 <h6>Insert FIVR Data Component </h6>
+
+<button type="button" (click)="addNewRow()" class="btn btn-primary">Add new Row</button><br>
+
+    <form [formGroup]="invoiceForm">
+      <div formArrayName="itemRows">
+        <div *ngFor="let itemrow of invoiceForm.controls.itemRows.controls; let i=index"  [formGroupName]="i">
+          <h4>Invoice Row #{{ i + 1 }}</h4>
+          <div class="form-group">
+            <label>Item Name</label>
+            <input formControlName="itemname" class="form-control">
+          </div>
+          <button *ngIf="invoiceForm.controls.itemRows.controls.length >= 2" (click)="deleteRow(i)" class="btn btn-danger">Delete Button</button>
+        </div>
+      </div>
+
+  </form>

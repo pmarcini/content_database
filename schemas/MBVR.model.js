@@ -8,12 +8,12 @@ var MBVRSchema = new Schema({
     interfaceName: String,  
     railName: String, 
     revLevel: String, 
+    voltage: [], //Vnom, Vmin, Vmax, what location
     decoupling: [], // Need to think about. type, location, count 
     phaseCount: int, 
     inductorL: int, 
     inductorR: int,
     current: [], // Imax Itdc
-    voltage: [], //Vnom, Vmin, Vmax, what location
     //loadingCondition: 
     brdConductivity: int, 
     pkgConductivity: int,

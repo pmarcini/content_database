@@ -31,4 +31,8 @@ export class InsertDataBrdComponent implements AfterViewInit {
         document.getElementsByTagName('head')[0].appendChild(node);
         console.log(document.getElementsByTagName('head')[0].appendChild(node))
     }
+    
 }
+
+
+// https://plnkr.co/edit/clTbNP7MHBbBbrUp20vr?p=info 

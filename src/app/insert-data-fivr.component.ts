@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from './data.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'insert-data-fivr-comp',
@@ -11,23 +12,38 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class InsertDataFIVRComponent {
 
-    rForm: FormGroup;
-    post: any;
+    public invoiceForm: FormGroup;
 
-    constructor(public myService: DataService, private fb: FormBuilder){
+    constructor(private _fb: FormBuilder) { }
 
-          this.rForm = fb.group({
-      
-     });
-
+    ngOnInit() {
+      this.invoiceForm = this._fb.group({
+        itemRows: this._fb.array([this.initItemRows()])
+      });
     }
 
-    insertFIVRAnalysis(post){
-      console.log("data-component: " + post); 
-      //this.myService.insertProduct(post).subscribe()
-
+    /*
+    This creates a new formgroup. You can think of it as adding an empty object
+    into an array. So we are pushing an object to the formarray 'itemrows' that
+    has the property 'itemname'. 
+    */
+    initItemRows() {
+        return this._fb.group({
+            itemname: ['']
+        });
     }
 
+    addNewRow() {
+        const control = <FormArray>this.invoiceForm.controls['itemRows'];
+        control.push(this.initItemRows());
+    }
+
+    deleteRow(index: number) {
+        const control = <FormArray>this.invoiceForm.controls['itemRows'];
+        control.removeAt(index);
+    }
 }
 
 //https://coursetro.com/posts/code/66/Angular-4-Reactive-Forms-Tutorial
+
+//http://plnkr.co/edit/7jJJhkcgqk4YdjFOXTGF?p=preview
