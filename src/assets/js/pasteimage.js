@@ -1,4 +1,6 @@
-var CLIPBOARD = new CLIPBOARD_CLASS("my_canvas", true);
+
+<canvas style="border:1px solid grey;" id="my_canvas{{i}}" width="500" height="300"></canvas>
+//var CLIPBOARD = new CLIPBOARD_CLASS("my_canvas", true);
 
 /**
  * image pasting into canvas
@@ -7,10 +9,14 @@ var CLIPBOARD = new CLIPBOARD_CLASS("my_canvas", true);
  * @param boolean autoresize if canvas will be resized
  */
 
-function CLIPBOARD_CLASS(canvas_id, autoresize) {
-
+function CLIPBOARD_CLASS(canvas_id, i, autoresize) {
 	console.log("*********************** SCRIPT LOADED *****************************") 
- 
+
+	canvas_id = canvas_id + i; 
+	console.log("canvas_id:" + canvas_id )
+	console.log("i:" + i )
+	console.log("autoresize:" + autoresize )
+
 	var _self = this;
 	var canvas = document.getElementById(canvas_id);
 	var ctx = document.getElementById(canvas_id).getContext("2d");
@@ -19,6 +25,8 @@ function CLIPBOARD_CLASS(canvas_id, autoresize) {
 	var text_top = 15;
 	var pasteCatcher;
 	var paste_mode;
+
+
 
 	//handlers
 	document.addEventListener('keydown', function (e) {
@@ -129,5 +137,9 @@ function CLIPBOARD_CLASS(canvas_id, autoresize) {
 			ctx.drawImage(pastedImage, 0, 0);
 		};
 		pastedImage.src = source;
+		console.log(pastedImage.src)
+		return pastedImage.src
 	};
+
 }
+

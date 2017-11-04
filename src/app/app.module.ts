@@ -15,10 +15,11 @@ import { InsertDataPkgComponent } from './insert-data-pkg.component';
 import { InsertDataBrdComponent } from './insert-data-brd.component';
 import { InsertDataMBVRComponent } from './insert-data-mbvr.component';
 import { InsertDataFIVRComponent } from './insert-data-fivr.component';
+import { CanvasComponent } from './canvas.component';
 
 @NgModule({
   declarations: [AppComponent, BodyComponent, HeaderComponent, LeftNavComponent, InsertDataComponent, 
-                 InsertDataPkgComponent, InsertDataBrdComponent, InsertDataMBVRComponent, InsertDataFIVRComponent],
+                 InsertDataPkgComponent, InsertDataBrdComponent, InsertDataMBVRComponent, InsertDataFIVRComponent, CanvasComponent],
 
   imports: [BrowserModule,HttpModule,AppRoutingModule,FormsModule,ReactiveFormsModule],
 

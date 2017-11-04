@@ -1,0 +1,17 @@
+<h1> this is the canvas component <h1>
+
+    <form [formGroup]="invoiceForm">
+
+      <div formArrayName="itemRows">
+        <div *ngFor="let itemrow of invoiceForm.controls.itemRows.controls; let i=index"  [formGroupName]="i">
+                
+          <h4>Invoice Row #{{ i + 1 }}</h4>
+          <div class="form-group">
+            <input type="text" contentEditable="true" id = "testid" style="border: 1px solid black; width: 10em" >
+          </div>
+          <button *ngIf="invoiceForm.controls.itemRows.controls.length > 1" (click)="deleteRow(i)" class="btn btn-danger">Delete Button</button>
+          <button (click)='addNewRow();saveContent()' class="btn btn-primary">Add new Row</button><br>
+        </div>
+      </div>
+
+  </form>
